@@ -21,6 +21,7 @@ const config = {
     extend: {
       colors: {
         "primary-color": "#0F9D58",
+        "progress-color": "#53e09c",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
