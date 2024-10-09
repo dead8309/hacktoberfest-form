@@ -19,14 +19,18 @@ export const CreateUser = async (data: unknown): Promise<Response> => {
         },
       });
       if (existingUser) {
-        throw new Error("User with that roll number or email already exists");
+        return {
+          error: {
+            message: "User with that roll number or email already exists",
+          },
+        };
       }
       await prisma.user.create({
         data: result.data,
       });
       return { success: { message: "Success!" } };
     } else {
-      throw new Error(result.error.message);
+      return { error: { message: result.error.message } };
     }
   } catch (error: any) {
     console.log(error);
