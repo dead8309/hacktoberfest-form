@@ -5,7 +5,7 @@ import Input from "../ui/input";
 
 type Props = {};
 
-function TryHackId({
+function GitHubId({
   handleChange,
   formData,
   issues,
@@ -20,11 +20,11 @@ function TryHackId({
     <div>
       <Input
         onChange={handleChange}
-        type="url"
+        type="text"
         name={name}
         id={name}
         value={formData[name as keyof User]}
-        placeholder="Type your TryHackMe Id here .."
+        placeholder="Enter your GitHub Id or URL here .."
       />
       {issues &&
         issues.issues.map((issue) => (
@@ -36,4 +36,4 @@ function TryHackId({
   );
 }
 
-export default TryHackId;
+export default GitHubId;

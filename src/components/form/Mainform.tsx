@@ -14,15 +14,15 @@ import {
 import Mail from "../questions/Mail";
 import Phone from "../questions/Phone";
 import Roll from "../questions/Roll";
-import TryHackId from "../questions/TryHackId";
+import GitHubId from "../questions/GitHubId";
 import Year from "../questions/Year";
-import Rate from "../questions/Rate";
 import { CreateUser } from "@/actions/form-submit";
 import { User, UserSchema } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import { z, ZodError } from "zod";
 import { Toaster, toast } from "sonner";
 import Spinner from "../ui/spinner";
+import { cn } from "@/lib/utils";
 
 function Mainform() {
   const [page, setPage] = useState(0);
@@ -33,12 +33,11 @@ function Mainform() {
     { Component: Phone, name: "phone", title: "Phone Number" },
     { Component: Roll, name: "roll", title: "Roll Number" },
     {
-      Component: TryHackId,
-      name: "tryhackmeId",
-      title: "Try hack me Id (optional)",
+      Component: GitHubId,
+      name: "githubId",
+      title: "Github Account URL or ID",
     },
     { Component: Year, name: "year", title: "Year" },
-    { Component: Rate, name: "rate", title: "Experience" },
   ];
 
   const router = useRouter();
@@ -48,9 +47,8 @@ function Mainform() {
     email: "",
     phone: "",
     roll: "",
-    tryhackmeId: "",
+    githubId: "",
     year: "1",
-    rate: "beginner",
   });
 
   const [errors, SetError] = useState<ZodError | null>(null);
@@ -145,7 +143,14 @@ function Mainform() {
 
   return (
     <div className="flex w-full h-full">
-      <div className="w-full absolute overflow-hidden z-20 bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+      <div
+        className={cn(
+          "w-full absolute overflow-hidden z-20 bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700",
+          {
+            "hidden": progress === 0,
+          }
+        )}
+      >
         <div
           className="bg-progress-color h-1.5 rounded-full dark:bg-green-500 transition-all ease-linear"
           style={{ width: `${progress}%` }}

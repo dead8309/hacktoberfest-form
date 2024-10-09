@@ -1,4 +1,4 @@
 export const Form_Details = {
-  title: "DEFCON",
+  title: "MLSAxHACKTOBERFEST",
   description: "lorem",
 };

@@ -14,15 +14,32 @@ export const UserSchema = z.object({
     .string()
     .min(6, "Roll numbers must be more than 6 digits")
     .regex(/^[0-9]+$/, "Roll number must contain only digits"),
-  tryhackmeId: z.string(),
+  githubId: z.union([
+    z
+      .string()
+      .regex(
+        /^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$/,
+        "Invalid GitHub Id"
+      ),
+    z
+      .string()
+      .url()
+      .transform((url, ctx) => {
+        const match = url.match(/^https?:\/\/(?:www\.)?github\.com\/([^/]+)/);
+        if (!match) {
+          // throw new Error("Invalid GitHub URL");
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: "Invalid GitHub URL",
+          });
+          return z.NEVER;
+        }
+        return match[1];
+      }),
+  ]),
   year: z.enum(["1", "2", "3", "4"], {
     errorMap: (issue, ctx) => {
       return { message: "Please select your Year" };
-    },
-  }),
-  rate: z.enum(["beginner", "advanced"], {
-    errorMap: (issue, ctx) => {
-      return { message: "Please select your Experience" };
     },
   }),
 });

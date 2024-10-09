@@ -6,8 +6,8 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Defcon Registration",
-  description: "Registration form for Defcon",
+  title: "MLSAxHacktoberfest 2024",
+  description: "Registration form for Hacktoberfest",
 };
 
 export default function RootLayout({

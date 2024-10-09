@@ -18,34 +18,14 @@ export default function Page() {
           height={200}
           width={200}
         />
+        <Image
+          src={"/asstes/images/hacktoberfest.png"}
+          alt="hacktoberfest"
+          height={140}
+          width={140}
+          className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4"
+        />
       </div>
     </div>
-    //TODO: LANDING PAGE
-    // <div className="h-screen text-white flex flex-col pt-12 px-4 gap-4 items-center">
-    //   <Image src={Icon} alt="Icon" />
-
-    //   <h1 className="text-3xl md:text-5xl font-bold mt-10">{Form_Details.title}</h1>
-
-    //   <section className="text-center mt-4">
-    //     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid totam
-    //     provident veniam eos debitis laboriosam nesciunt excepturi rerum,
-    //     delectus ipsa, facilis sit corporis voluptates, eveniet ad nobis.
-    //     Repellat, eum architecto.
-    //   </section>
-
-    //   <div className="absolute w-screen h-24  flex justify-center bottom-0">
-    //     <Link
-    //       className={cn(
-    //         buttonVariants({ variant: "default" }),
-    //         "text-2xl md:text-3xl bg-primary-color w-64 h-12"
-    //       )}
-    //       href="/form"
-    //     >
-    //       Register
-    //     </Link>
-
-    //   </div>
-
-    // </div>
   );
 }

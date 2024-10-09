@@ -19,9 +19,8 @@ model User {
   email       String  @unique @db.String
   phone       String  @db.String
   roll        String  @unique @db.String
-  tryhackmeId String?
+  githubId String?
   year        String  @db.String
-  rate        String  @db.String
 
   @@map("users")
 }
