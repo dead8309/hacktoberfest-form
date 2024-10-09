@@ -23,7 +23,7 @@ export default function Page() {
           alt="hacktoberfest"
           height={140}
           width={140}
-          className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4"
+          className="absolute top-0 right-0 translate-y-5 -translate-x-4"
         />
       </div>
     </div>
