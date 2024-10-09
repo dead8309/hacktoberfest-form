@@ -1,9 +1,3 @@
-import Link from "next/link";
-import Icon from "../../public/asstes/icons/mlsa.png";
-import { Form_Details } from "@/constants";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import Example from "@/components/ui/button2";
 import Form from "@/components/form/Mainform";
 import Image from "next/image";
 
@@ -11,19 +5,20 @@ export default function Page() {
   return (
     <div className="">
       <Form />
-      <div className="mt-5 ml-3">
+      <div className="flex w-full justify-between items-center mt-5 px-2 sm:px-4">
         <Image
           src={"/asstes/icons/mlsa.png"}
           alt="mlsa logo"
           height={200}
           width={200}
+          className="max-w-[150px] sm:max-w-[200px] w-auto h-auto"
         />
         <Image
           src={"/asstes/images/hacktoberfest.png"}
           alt="hacktoberfest"
-          height={140}
-          width={140}
-          className="absolute top-0 right-0 translate-y-5 -translate-x-4"
+          height={120}
+          width={120}
+          className="max-w-[100px] sm:max-w-[200px] w-auto h-auto"
         />
       </div>
     </div>
