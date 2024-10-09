@@ -25,7 +25,7 @@ const Name = ({
         name={name}
         id={name}
         value={formData[name as keyof User]}
-        placeholder="Type your name here .."
+        placeholder="Type your name here.."
       />
       {issues &&
         issues.issues.map((issue) => (

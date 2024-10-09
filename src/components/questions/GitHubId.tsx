@@ -24,7 +24,7 @@ function GitHubId({
         name={name}
         id={name}
         value={formData[name as keyof User]}
-        placeholder="Enter your GitHub Id or URL here .."
+        placeholder="Enter your GitHub Id or URL here.."
       />
       {issues &&
         issues.issues.map((issue) => (

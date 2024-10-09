@@ -22,7 +22,7 @@ const Mail = ({
         id={name}
         value={formData[name as keyof User]}
         onChange={handleChange}
-        placeholder="Type your email here .."
+        placeholder="Type your email here.."
       />
       {issues &&
         issues.issues.map((issue) => (
